@@ -1,0 +1,4 @@
+import { ArrowUpRight } from "lucide-react"
+import { portfolio } from "@/data/portfolio"
+
+export function Footer() { return <footer id="contact" className="border-t border-line py-16"><div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end"><div><p className="eyebrow mb-4">05 / get in touch</p><h2 className="max-w-lg text-3xl font-semibold tracking-tight sm:text-4xl">Let&apos;s build something useful.</h2></div><a href={`mailto:${portfolio.contact.email}`} className="group flex items-center gap-2 font-mono text-xs text-emerald">{portfolio.contact.email}<ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></a></div><div className="mt-16 flex justify-between border-t border-line pt-5 font-mono text-[10px] text-zinc-600"><span>© {new Date().getFullYear()} Afghan Almufqi Yournawan</span><span>Built with Next.js</span></div></footer> }
