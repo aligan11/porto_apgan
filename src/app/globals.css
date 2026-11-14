@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: dark; }
+:root { color-scheme: dark; --obsidian: #050507; --surface: #121215; --line: #27272a; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #09090b; color: #f4f4f5; font-family: var(--font-jakarta), sans-serif; }
+body { margin: 0; background: var(--obsidian); color: #f4f4f5; font-family: var(--font-jakarta), sans-serif; }
 ::selection { background: #10b981; color: #09090b; }
-.grid-lines { background-image: linear-gradient(to right, rgba(39,39,42,.28) 1px, transparent 1px), linear-gradient(to bottom, rgba(39,39,42,.28) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, black, transparent 70%); }
+.site-canvas { background: radial-gradient(circle at 50% -12%, rgba(16,185,129,.055), transparent 30%), linear-gradient(180deg, #050507 0%, #07070a 48%, #050507 100%); }
+.grid-lines { background-image: linear-gradient(to right, rgba(148,163,184,.075) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,.075) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, black 0%, rgba(0,0,0,.8) 48%, transparent 92%); }
+.ambient-orb { pointer-events: none; position: absolute; z-index: 0; border-radius: 9999px; filter: blur(90px); opacity: .12; transform: translateZ(0); }
+.ambient-orb--hero { top: 40px; right: 8%; width: 300px; height: 300px; background: #10b981; }
+.ambient-orb--left { top: 760px; left: -150px; width: 330px; height: 330px; background: #059669; opacity: .08; }
+.ambient-orb--projects { top: 1120px; right: -180px; width: 420px; height: 420px; background: #10b981; opacity: .1; }
+.ambient-orb--footer { bottom: 100px; left: 18%; width: 260px; height: 260px; background: #059669; opacity: .07; }
+.content-layer { position: relative; z-index: 1; }
 .eyebrow { color: #10b981; font: 500 11px/1 var(--font-mono), monospace; letter-spacing: .12em; text-transform: uppercase; }
 .section-rule { border-top: 1px solid #27272a; }
+@media (max-width: 640px) { .ambient-orb--hero { top: 100px; right: -100px; width: 220px; height: 220px; } .ambient-orb--projects { right: -180px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
